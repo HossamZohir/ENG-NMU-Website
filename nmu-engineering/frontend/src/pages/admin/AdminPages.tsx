@@ -271,7 +271,7 @@ export const AdminEvents: React.FC = () => {
 // ─────────────────────────────────────────────────────────────────────────────
 // Admin: Research Management
 // ─────────────────────────────────────────────────────────────────────────────
-const emptyProject = { title_en: '', title_ar: '', description_en: '', description_ar: '', status: 'active' as const, start_date: '', funding_source: '', is_published: true }
+const emptyProject: { title_en: string; title_ar: string; description_en: string; description_ar: string; status: 'active' | 'completed' | 'pending'; start_date: string; funding_source: string; is_published: boolean } = { title_en: '', title_ar: '', description_en: '', description_ar: '', status: 'active', start_date: '', funding_source: '', is_published: true }
 
 export const AdminResearch: React.FC = () => {
   const { lang } = useTranslation()
