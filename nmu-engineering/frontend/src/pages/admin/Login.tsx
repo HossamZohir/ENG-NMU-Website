@@ -145,22 +145,7 @@ const AdminLogin: React.FC = () => {
               </Button>
             </form>
 
-            {/* Demo credentials hint */}
-            <div className="mt-6 p-4 bg-gray-50 rounded-xl border border-dashed border-gray-200">
-              <p className="text-xs font-semibold text-gray-500 mb-2 text-center uppercase tracking-wide">
-                {lang === 'ar' ? 'بيانات تجريبية' : 'Demo Credentials'}
-              </p>
-              <div className="space-y-1 text-xs text-gray-600 font-mono">
-                <div className="flex justify-between">
-                  <span className="text-gray-400">Super Admin:</span>
-                  <span>superadmin@nmu.edu.eg</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-400">Password:</span>
-                  <span>NMU@2025!</span>
-                </div>
-              </div>
-            </div>
+            
 
             <p className="text-center mt-5 text-xs text-gray-400">
               <Link to="/" className="text-nmu-red hover:underline">
