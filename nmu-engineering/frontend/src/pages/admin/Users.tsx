@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import { Button, Badge, Modal, Input, Select, ConfirmDialog, EmptyState } from '@/components/ui'
 import { usersApi, authApi } from '@/api'
-import type { User } from '@/types'
+import type { User, Role } from '@/types'
 import { useAuth } from '@/hooks/useAuth'
 import toast from 'react-hot-toast'
 
@@ -12,7 +12,21 @@ const MOCK_USERS: User[] = [
   { id: '3', email: 'media@nmu.edu.eg', full_name: 'Media Admin', full_name_ar: 'مشرف الوسائط', role: 'admin', is_active: false, created_at: '2024-11-01' },
 ]
 
-const emptyUser = { email: '', full_name: '', full_name_ar: '', password: '', role: 'admin' as const }
+interface UserForm {
+  email: string
+  full_name: string
+  full_name_ar: string
+  password: string
+  role: Role
+}
+
+const emptyUser: UserForm = {
+  email: '',
+  full_name: '',
+  full_name_ar: '',
+  password: '',
+  role: 'admin',
+}
 
 const AdminUsers: React.FC = () => {
   const { lang } = useTranslation()
@@ -21,7 +35,8 @@ const AdminUsers: React.FC = () => {
   const [loading, setLoading] = useState(true)
   const [modalOpen, setModalOpen] = useState(false)
   const [pwModalOpen, setPwModalOpen] = useState(false)
-  const [editing, setEditing] = useState<typeof emptyUser & { id?: string }>(emptyUser)
+  const [editing, setEditing] =
+  useState<UserForm & { id?: string }>(emptyUser)
   const [isNew, setIsNew] = useState(true)
   const [saving, setSaving] = useState(false)
   const [deleteId, setDeleteId] = useState<string | null>(null)

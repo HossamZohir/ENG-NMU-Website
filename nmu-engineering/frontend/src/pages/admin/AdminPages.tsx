@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import { useAuth } from '@/hooks/useAuth'
 import { Button, Badge, Modal, Input, Textarea, Select, Toggle, ConfirmDialog, EmptyState, CardSkeleton } from '@/components/ui'
-import { facultyApi, eventsApi, researchApi, laboratoriesApi, downloadsApi, contactApi, usersApi, authApi, programsApi } from '@/api'
+import { facultyApi, eventsApi, researchApi, laboratoriesApi, downloadsApi, contactApi, authApi, programsApi } from '@/api'
 import { apiClient } from '@/api/client'
-import type { FacultyMember, Event, ResearchProject, Laboratory, Download, ContactInfo, User } from '@/types'
+import type { FacultyMember, Event, ResearchProject, Laboratory, Download, ContactInfo } from '@/types'
 import toast from 'react-hot-toast'
 
 // ─────────────────────────────────────────────────────────────────────────────
