@@ -34,7 +34,7 @@ const RANK_LABEL: Record<string, string> = {
   teaching_assistant: 'Teaching Assistant',
 }
 
-const emptyMember = { name_en: '', name_ar: '', title_en: '', title_ar: '', rank: 'lecturer' as const, department_id: 'aerospace', email: '', phone: '', office: '', office_hours: '', bio_en: '', bio_ar: '' }
+const emptyMember: Partial<FacultyMember> = { name_en: '', name_ar: '', title_en: '', title_ar: '', rank: 'lecturer', department_id: 'aerospace', email: '', phone: '', office: '', office_hours: '', bio_en: '', bio_ar: '' }
 
 export const AdminMembers: React.FC = () => {
   const { lang } = useTranslation()
@@ -42,7 +42,7 @@ export const AdminMembers: React.FC = () => {
   const [loading, setLoading] = useState(true)
   const [modalOpen, setModalOpen] = useState(false)
   const [isNew, setIsNew] = useState(true)
-  const [editing, setEditing] = useState<typeof emptyMember & { id?: string }>(emptyMember)
+  const [editing, setEditing] = useState<Partial<FacultyMember> & { id?: string }>(emptyMember)
   const [saving, setSaving] = useState(false)
   const [deleteId, setDeleteId] = useState<string | null>(null)
   const [deleting, setDeleting] = useState(false)
